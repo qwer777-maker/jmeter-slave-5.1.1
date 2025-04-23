@@ -1,0 +1,71 @@
+2024-03-30 09:31:55,166 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: Copyright (c) 1998-2019 The Apache Software Foundation
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: Version 5.1.1 r1855137
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: java.version=1.8.0_201
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: os.name=Windows 10
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: os.arch=amd64
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: os.version=10.0
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: file.encoding=GBK
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: java.awt.headless=true
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: Max memory     =1073741824
+2024-03-30 09:31:55,176 INFO o.a.j.JMeter: Available Processors =12
+2024-03-30 09:31:55,178 INFO o.a.j.JMeter: Default Locale=English (EN)
+2024-03-30 09:31:55,179 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2024-03-30 09:31:55,179 INFO o.a.j.JMeter: JMeterHome=D:\PY\Autotest1\apache-jmeter-5.1.1
+2024-03-30 09:31:55,179 INFO o.a.j.JMeter: user.dir  =D:\PY\Autotest1\apache-jmeter-5.1.1\bin
+2024-03-30 09:31:55,179 INFO o.a.j.JMeter: PWD       =D:\PY\Autotest1\apache-jmeter-5.1.1\bin
+2024-03-30 09:31:55,180 INFO o.a.j.JMeter: IP: 10.72.56.87 Name: L7285360A218 FullName: L7285360A218.byd.com
+2024-03-30 09:31:55,182 INFO o.a.j.s.FileServer: Default base='D:\PY\Autotest1\apache-jmeter-5.1.1\bin'
+2024-03-30 09:31:55,184 INFO o.a.j.s.FileServer: Set new base='D:\PY\Autotest1\apache-jmeter-5.1.1\data\乘车bom'
+2024-03-30 09:31:55,265 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2024-03-30 09:31:55,273 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2024-03-30 09:31:55,276 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2024-03-30 09:31:55,279 INFO o.a.j.s.SaveService: Loading file: D:\PY\Autotest1\apache-jmeter-5.1.1\data\乘车bom\bom.jmx
+2024-03-30 09:31:55,298 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2024-03-30 09:31:55,359 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 10.72.56.87:1099
+2024-03-30 09:31:55,638 ERROR o.a.j.e.DistributedRunner: Failed to create engine at 10.72.56.87:1099
+java.rmi.ConnectIOException: Exception creating connection to: 10.72.56.87; nested exception is: 
+	java.io.FileNotFoundException: rmi_keystore.jks (系统找不到指定的文件。)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(Unknown Source) ~[?:1.8.0_201]
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(Unknown Source) ~[?:1.8.0_201]
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(Unknown Source) ~[?:1.8.0_201]
+	at sun.rmi.server.UnicastRef.newCall(Unknown Source) ~[?:1.8.0_201]
+	at sun.rmi.registry.RegistryImpl_Stub.lookup(Unknown Source) ~[?:1.8.0_201]
+	at org.apache.jmeter.engine.ClientJMeterEngine.getEngine(ClientJMeterEngine.java:72) ~[ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.engine.ClientJMeterEngine.<init>(ClientJMeterEngine.java:85) ~[ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.engine.DistributedRunner.createEngine(DistributedRunner.java:236) ~[ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.engine.DistributedRunner.getClientEngine(DistributedRunner.java:213) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.engine.DistributedRunner.init(DistributedRunner.java:93) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.JMeter.runNonGui(JMeter.java:1087) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.JMeter.startNonGui(JMeter.java:991) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.JMeter.start(JMeter.java:563) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_201]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:253) [ApacheJMeter.jar:5.1.1 r1855137]
+Caused by: java.io.FileNotFoundException: rmi_keystore.jks (系统找不到指定的文件。)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_201]
+	at java.io.FileInputStream.open(Unknown Source) ~[?:1.8.0_201]
+	at java.io.FileInputStream.<init>(Unknown Source) ~[?:1.8.0_201]
+	at java.io.FileInputStream.<init>(Unknown Source) ~[?:1.8.0_201]
+	at org.apache.jmeter.rmi.SSLRMIClientSocketFactory.loadStore(SSLRMIClientSocketFactory.java:125) ~[ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.rmi.SSLRMIClientSocketFactory.createSocket(SSLRMIClientSocketFactory.java:83) ~[ApacheJMeter_core.jar:5.1.1 r1855137]
+	... 18 more
+2024-03-30 09:31:55,640 ERROR o.a.j.u.JMeterUtils: Exception creating connection to: 10.72.56.87; nested exception is: 
+	java.io.FileNotFoundException: rmi_keystore.jks (系统找不到指定的文件。)
+2024-03-30 09:31:55,642 INFO o.a.j.e.DistributedRunner: Failed to configure 10.72.56.87:1099
+2024-03-30 09:31:55,644 INFO o.a.j.e.DistributedRunner: Stopping remote engines
+2024-03-30 09:31:55,644 INFO o.a.j.e.DistributedRunner: Remote engines have been stopped
+2024-03-30 09:31:55,645 ERROR o.a.j.JMeter: Error in NonGUIDriver
+java.lang.RuntimeException: Following remote engines could not be configured:[10.72.56.87:1099]
+	at org.apache.jmeter.engine.DistributedRunner.init(DistributedRunner.java:112) ~[ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.JMeter.runNonGui(JMeter.java:1087) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.JMeter.startNonGui(JMeter.java:991) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at org.apache.jmeter.JMeter.start(JMeter.java:563) [ApacheJMeter_core.jar:5.1.1 r1855137]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_201]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:253) [ApacheJMeter.jar:5.1.1 r1855137]

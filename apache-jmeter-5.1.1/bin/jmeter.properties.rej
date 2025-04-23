@@ -1,0 +1,205 @@
+diff a/apache-jmeter-5.1.1/bin/jmeter.properties b/apache-jmeter-5.1.1/bin/jmeter.properties	(rejected hunks)
+@@ -158,201 +158,202 @@
+ # HiDPI mode (default: false)
+ # Activate a 'pseudo'-hidpi mode. Allows to increase size of some UI elements
+ # which are not correctly managed by JVM with high resolution screens in Linux or Windows
+ #jmeter.hidpi.mode=false
+ # To enable pseudo-hidpi mode change to true
+ #jmeter.hidpi.mode=true
+ # HiDPI scale factor
+ #jmeter.hidpi.scale.factor=1.0
+ # Suggested value for HiDPI
+ #jmeter.hidpi.scale.factor=2.0
+ 
+ # Toolbar display
+ # Toolbar icon definitions
+ #jmeter.toolbar.icons=org/apache/jmeter/images/toolbar/icons-toolbar.properties
+ # Toolbar list
+ #jmeter.toolbar=new,open,close,save,save_as_testplan,|,cut,copy,paste,|,expand,collapse,toggle,|,test_start,test_stop,test_shutdown,|,test_start_remote_all,test_stop_remote_all,test_shutdown_remote_all,|,test_clear,test_clear_all,|,search,search_reset,|,function_helper,help
+ # Toolbar icons default size: 22x22. Available sizes are: 22x22, 32x32, 48x48
+ #jmeter.toolbar.icons.size=22x22
+ # Suggested value for HiDPI
+ #jmeter.toolbar.icons.size=48x48
+ 
+ # Icon definitions
+ # default:
+ #jmeter.icons=org/apache/jmeter/images/icon.properties
+ # alternate:
+ #jmeter.icons=org/apache/jmeter/images/icon_1.properties
+ # Historical icon set (deprecated)
+ #jmeter.icons=org/apache/jmeter/images/icon_old.properties
+ 
+ # Tree icons default size: 19x19. Available sizes are: 19x19, 24x24, 32x32, 48x48
+ # Useful for HiDPI display (see below)
+ #jmeter.tree.icons.size=19x19
+ # Suggested value for HiDPI screen like 3200x1800:
+ #jmeter.tree.icons.size=32x32
+ 
+ #Components to not display in JMeter GUI (GUI class name or static label)
+ # These elements are deprecated and will be removed in next version:
+ # MongoDB Script, MongoDB Source Config, Monitor Results
+ # BSF Elements
+ not_in_menu=org.apache.jmeter.protocol.mongodb.sampler.MongoScriptSampler,org.apache.jmeter.protocol.mongodb.config.MongoSourceElement,\
+     org.apache.jmeter.timers.BSFTimer,org.apache.jmeter.modifiers.BSFPreProcessor,org.apache.jmeter.extractor.BSFPostProcessor,org.apache.jmeter.assertions.BSFAssertion,\
+     org.apache.jmeter.visualizers.BSFListener,org.apache.jmeter.protocol.java.sampler.BSFSampler,\
+     org.apache.jmeter.protocol.http.control.gui.SoapSamplerGui
+ 
+ # Number of items in undo history
+ # Feature is disabled by default (0) due to known and not fixed bugs:
+ # https://bz.apache.org/bugzilla/show_bug.cgi?id=57043
+ # https://bz.apache.org/bugzilla/show_bug.cgi?id=57039
+ # https://bz.apache.org/bugzilla/show_bug.cgi?id=57040
+ # Set it to a number > 0 (25 can be a good default)
+ # The bigger it is, the more it consumes memory
+ #undo.history.size=0
+ 
+ # Hotkeys to add JMeter components, will add elements when you press Ctrl+0 .. Ctrl+9 (Command+0 .. Command+9 on Mac)
+ gui.quick_0=ThreadGroupGui
+ gui.quick_1=HttpTestSampleGui
+ gui.quick_2=RegexExtractorGui
+ gui.quick_3=AssertionGui
+ gui.quick_4=ConstantTimerGui
+ gui.quick_5=TestActionGui
+ gui.quick_6=JSR223PostProcessor
+ gui.quick_7=JSR223PreProcessor
+ gui.quick_8=DebugSampler
+ gui.quick_9=ViewResultsFullVisualizer
+ 
+ 
+ #---------------------------------------------------------------------------
+ # JMX Backup configuration
+ #---------------------------------------------------------------------------
+ #Enable auto backups of the .jmx file when a test plan is saved.
+ #When enabled, before the .jmx is saved, it will be backed up to the directory pointed
+ #by the jmeter.gui.action.save.backup_directory property (see below). Backup file names are built
+ #after the jmx file being saved. For example, saving test-plan.jmx will create a test-plan-000012.jmx
+ #in the backup directory provided that the last created backup file is test-plan-000011.jmx.
+ #Default value is true indicating that auto backups are enabled
+ #jmeter.gui.action.save.backup_on_save=true
+ 
+ #Set the backup directory path where JMX backups will be created upon save in the GUI.
+ #If not set (what it defaults to) then backup files will be created in
+ #a sub-directory of the JMeter base installation. The default directory is ${JMETER_HOME}/backups
+ #If set and the directory does not exist, it will be created.
+ #jmeter.gui.action.save.backup_directory=
+ 
+ #Set the maximum time (in hours) that backup files should be preserved since the save time.
+ #By default no expiration time is set which means we keep backups for ever.
+ #jmeter.gui.action.save.keep_backup_max_hours=0
+ 
+ #Set the maximum number of backup files that should be preserved. By default 10 backups will be preserved.
+ #Setting this to zero will cause the backups to not being deleted (unless keep_backup_max_hours is set to a non zero value)
+ #jmeter.gui.action.save.keep_backup_max_count=10
+ 
+ #Enable auto saving of the .jmx file before start run a test plan
+ #When enabled, before the run, the .jmx will be saved and also backed up to the directory pointed
+ #save_automatically_before_run=true
+ 
+ #---------------------------------------------------------------------------
+ # Remote hosts and RMI configuration
+ #---------------------------------------------------------------------------
+ 
+ # Remote Hosts - comma delimited
+-remote_hosts=192.168.253.129:1099,10.72.9.123:1099,10.17.18.162:1099,10.43.138.30:1099,10.32.100.194:1099
++remote_hosts=10.17.18.162:1099,10.3.204.222:1099,10.43.138.30:1099
++#remote_hosts=10.17.18.162:1099
+ #remote_hosts=localhost:1099,localhost:2010
+ 
+ # RMI port to be used by the server (must start rmiregistry with same port)
+ #server_port=1099
+ server_port=1099
+ # To change the port to (say) 1234:
+ # On the server(s)
+ # - set server_port=1234
+ # - start rmiregistry with port 1234
+ # On Windows this can be done by:
+ # SET SERVER_PORT=1234
+ # JMETER-SERVER
+ #
+ # On Unix:
+ # SERVER_PORT=1234 jmeter-server
+ #
+ # On the client:
+ # - set remote_hosts=server:1234
+ 
+ # Parameter that controls the RMI port used by RemoteSampleListenerImpl (The Controller)
+ # Default value is 0 which means port is randomly assigned
+ # You may need to open Firewall port on the Controller machine
+ #client.rmi.localport=0
+ 
+ # When distributed test is starting, there may be several attempts to initialize
+ # remote engines. By default, only single try is made. Increase following property
+ # to make it retry for additional times
+ #client.tries=1
+ 
+ # If there is initialization retries, following property sets delay between attempts
+ #client.retries_delay=5000
+ 
+ # When all initialization tries was made, test will fail if some remote engines are failed
+ # Set following property to true to ignore failed nodes and proceed with test
+ #client.continue_on_fail=false
+ 
+ # To change the default port (1099) used to access the server:
+ #server.rmi.port=1234
+ server.rmi.port=1099
+ # To use a specific port for the JMeter server engine, define
+ # the following property before starting the server:
+ #server.rmi.localport=4000
+ server.rmi.localport = 1099
+ # The jmeter server creates by default the RMI registry as part of the server process.
+ # To stop the server creating the RMI registry:
+ #server.rmi.create=false
+ 
+ # Define the following property to cause JMeter to exit after the first test
+ #server.exitaftertest=true
+ 
+ #
+ # Configuration of Secure RMI connection
+ #
+ # Type of keystore : JKS
+ #server.rmi.ssl.keystore.type=JKS
+ #
+ # Keystore file that contains private key
+ #server.rmi.ssl.keystore.file=rmi_keystore.jks
+ #
+ # Password of Keystore
+ #server.rmi.ssl.keystore.password=changeit
+ #
+ # Key alias
+ #server.rmi.ssl.keystore.alias=rmi
+ #
+ # Type of truststore : JKS
+ #server.rmi.ssl.truststore.type=JKS
+ #
+ # Keystore file that contains certificate
+ #server.rmi.ssl.truststore.file=rmi_keystore.jks
+ #
+ # Password of Trust store
+ #server.rmi.ssl.truststore.password=changeit
+ #
+ # Set this if you don't want to use SSL for RMI
+ #server.rmi.ssl.disable=false
+ server.rmi.ssl.disable=true
+ #---------------------------------------------------------------------------
+ #         Include Controller
+ #---------------------------------------------------------------------------
+ 
+ # Prefix used by IncludeController when building file name
+ #includecontroller.prefix=
+ 
+ #---------------------------------------------------------------------------
+ # Shared HTTP configuration between HC4 and Java Implementations
+ #---------------------------------------------------------------------------
+ 
+ #
+ # Should JMeter add to POST request content-type header if missing:
+ # Content-Type: application/x-www-form-urlencoded
+ # Was true before version 5.0
+ #post_add_content_type_if_missing=false
+ 
+ #---------------------------------------------------------------------------
+ # HTTP Java configuration
+ #---------------------------------------------------------------------------
+ 
+ # Number of connection retries performed by HTTP Java sampler before giving up
+ # 0 means no retry since version 3.0
