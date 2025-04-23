@@ -6,7 +6,7 @@ on:
       docker_images:
         description: '请填写 Docker 镜像名称 (多个用英文逗号分开)'
         required: true
-        default: 'alpine:latest'
+        default: 'jmeter-slave-5.1.1:latest'
       docker_arch:
         description: '请填写 Docker 镜像架构'
         required: true
