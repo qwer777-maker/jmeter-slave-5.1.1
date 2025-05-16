@@ -7,9 +7,11 @@ WORKDIR /opt/jmeter/apache-jmeter-$JMETER_VERSION/bin
 # 复制 Jmeter
 COPY apache-jmeter-${JMETER_VERSION}   /opt/jmeter
 COPY sources.list   /opt/jmeter
+COPY init.sh   /
 
 # 安装
 RUN chmod  -R 777  /opt/jmeter/apache-jmeter-$JMETER_VERSION \
+    chmod  -R 777  /init.sh \
     && rm /etc/apt/sources.list \
     && cp /opt/jmeter/sources.list /etc/apt/sources.list \
     && rm /opt/jmeter/sources.list \
@@ -19,6 +21,7 @@ RUN chmod  -R 777  /opt/jmeter/apache-jmeter-$JMETER_VERSION \
     && apt install iputils-ping -y \
     && apt install openssh-server -y \
     && apt install postgresql-client -y \
+    mkdir /run/sshd \
     sed -i "s/#PubkeyAuthentication.*/PubkeyAuthentication yes/g" /etc/ssh/sshd_config && \
     sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config && \
     sed -i "s/#PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config &&\
@@ -42,4 +45,5 @@ ENTRYPOINT $JMETER_HOME/bin/jmeter-server \
                         -Dserver.rmi.localport=${LOCAL_PORT} \
                         -Djava.rmi.server.hostname=${HOST_IP} \
                         -Jserver.rmi.ssl.disable=true
-
+                        
+CMD [ "./init.sh" ]
