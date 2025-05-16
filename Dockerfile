@@ -1,13 +1,15 @@
 FROM openjdk:8-jre
 ARG JMETER_VERSION=5.1.1
 
-# 设置工作目录
-WORKDIR /opt/jmeter/apache-jmeter-$JMETER_VERSION/bin
+
 
 # 复制 Jmeter
 COPY apache-jmeter-${JMETER_VERSION}   /opt/jmeter
 COPY sources.list   /opt/jmeter
 COPY init.sh   /
+
+# 设置工作目录
+WORKDIR /opt/jmeter/apache-jmeter-$JMETER_VERSION/bin
 
 # 安装
 RUN chmod  -R 777  /opt/jmeter/apache-jmeter-$JMETER_VERSION \
