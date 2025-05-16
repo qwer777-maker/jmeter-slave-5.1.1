@@ -4,7 +4,7 @@ ARG JMETER_VERSION=5.1.1
 
 
 # 复制 Jmeter
-COPY apache-jmeter-${JMETER_VERSION}   /opt/jmeter
+COPY apache-jmeter-${JMETER_VERSION}   /opt/jmeter/apache-jmeter-${JMETER_VERSION}
 COPY sources.list   /opt/jmeter
 COPY init.sh   /
 
