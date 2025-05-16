@@ -43,10 +43,12 @@ ENV PATH="$JMETER_HOME/bin:${PATH}"
 ARG RMI_PORT=1099
 ARG LOCAL_PORT=50000
 
+CMD [ "/init.sh" ]
+
 ENTRYPOINT $JMETER_HOME/bin/jmeter-server \
                         -Dserver_port=${RMI_PORT} \
                         -Dserver.rmi.localport=${LOCAL_PORT} \
                         -Djava.rmi.server.hostname=${HOST_IP} \
                         -Jserver.rmi.ssl.disable=true
                         
-CMD [ "/init.sh" ]
+
