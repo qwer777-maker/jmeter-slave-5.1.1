@@ -52,7 +52,6 @@ jobs:
 
           file_name="${image_name}.tar"
           chmod  -R 777 apache-jmeter-5.1.1
-          tar -zcvf apache-jmeter-5.1.1.tar.gz apache-jmeter-5.1.1 
           sh ./build.sh
           docker save "${image}" -o "${file_name}"
         done
