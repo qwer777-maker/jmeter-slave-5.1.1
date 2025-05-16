@@ -51,6 +51,8 @@ jobs:
           image_tag="${image##*:}"
 
           file_name="${image_name}.tar"
+          ls
+          pwd
           cd jmeter-slave-5.1.1
           chmod  -R 777 apache-jmeter-5.1.1
           tar -zcvf apache-jmeter-5.1.1.tar.gz apache-jmeter-5.1.1 
