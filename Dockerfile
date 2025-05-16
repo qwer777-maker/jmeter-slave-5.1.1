@@ -46,4 +46,4 @@ ENTRYPOINT $JMETER_HOME/bin/jmeter-server \
                         -Djava.rmi.server.hostname=${HOST_IP} \
                         -Jserver.rmi.ssl.disable=true
                         
-CMD [ "./init.sh" ]
+CMD [ "/init.sh" ]
