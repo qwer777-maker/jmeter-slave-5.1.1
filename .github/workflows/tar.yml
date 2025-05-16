@@ -59,6 +59,7 @@ jobs:
     - name: 列出要调试的文件
       run: |
         ls -lh
+        ls apache-jmeter-5.1.1
 
     - name: 确定文件处理逻辑
       id: determine_logic
