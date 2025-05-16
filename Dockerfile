@@ -10,7 +10,6 @@ COPY sources.list   /opt/jmeter
 
 # 安装
 RUN chmod  -R 777  /opt/jmeter/apache-jmeter-$JMETER_VERSION \
-    && rm /opt/jmeter/apache-jmeter-$JMETER_VERSION.tar.gz \
     && rm /etc/apt/sources.list \
     && cp /opt/jmeter/sources.list /etc/apt/sources.list \
     && rm /opt/jmeter/sources.list \
@@ -18,6 +17,7 @@ RUN chmod  -R 777  /opt/jmeter/apache-jmeter-$JMETER_VERSION \
     && apt install nano -y \
     && apt install net-tools  -y \
     && apt install iputils-ping -y \
+    && apt install openssh-server -y \
     && apt install postgresql-client -y
 
 # 设置环境变量
