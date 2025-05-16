@@ -38,6 +38,9 @@ jobs:
         sudo ln -s /mnt/docker /var/lib/docker
         sudo systemctl start docker
 
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
     - name: 拉取并保存多架构Docker镜像
       run: |
         images="${{ github.event.inputs.docker_images }}"
@@ -48,7 +51,6 @@ jobs:
           image_tag="${image##*:}"
 
           file_name="${image_name}.tar"
-          git clone https://github.com/niceqwer55555/jmeter-slave-5.1.1
           cd jmeter-slave-5.1.1
           chmod  -R 777 apache-jmeter-5.1.1
           tar -zcvf apache-jmeter-5.1.1.tar.gz apache-jmeter-5.1.1 
