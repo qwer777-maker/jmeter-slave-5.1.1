@@ -5,11 +5,11 @@ ARG JMETER_VERSION=5.1.1
 WORKDIR /opt/jmeter/apache-jmeter-$JMETER_VERSION/bin
 
 # 复制 Jmeter
-COPY apache-jmeter-${JMETER_VERSION}.tar.gz   /opt/jmeter
+COPY apache-jmeter-${JMETER_VERSION}   /opt/jmeter
 COPY sources.list   /opt/jmeter
 
 # 安装
-RUN tar -xvzf /opt/jmeter/apache-jmeter-$JMETER_VERSION.tar.gz -C /opt/jmeter/ \
+RUN chmod  -R 777  /opt/jmeter/apache-jmeter-$JMETER_VERSION \
     && rm /opt/jmeter/apache-jmeter-$JMETER_VERSION.tar.gz \
     && rm /etc/apt/sources.list \
     && cp /opt/jmeter/sources.list /etc/apt/sources.list \
