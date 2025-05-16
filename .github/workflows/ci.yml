@@ -11,7 +11,7 @@ on:
 #变量配置      
 env:
   #镜像名称
-  IMAGE_NAME: jmeter-slave
+  IMAGE_NAME: jmeter-slave:5.1.1
   #dockerHub仓库名称
   DOCKER_REGISTRY: ${{ secrets.DOCKER_USERNAME }}
 jobs:
